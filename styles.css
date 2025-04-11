@@ -12,11 +12,26 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add a subtle overlay to tie in the Neon Pink to Cyan vibe */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.1), rgba(0, 255, 255, 0.1));
+    z-index: 0;
 }
 
 .container {
     padding: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-image {
@@ -32,14 +47,14 @@ h1 {
     font-size: 48px;
     margin-bottom: 10px;
     color: #ff00ff; /* Neon Pink */
-    text-shadow: 2px 2px 4px #00ffff; /* Cyan shadow for pop */
+    text-shadow: 2px 2px 4px #00ffff; /* Cyan shadow */
 }
 
 p {
     font-size: 24px;
     margin-bottom: 30px;
-    color: #fff;
-    text-shadow: 1px 1px 2px #000;
+    color: #ff99ff; /* Light Pink */
+    text-shadow: 1px 1px 2px #00ffff; /* Cyan shadow */
 }
 
 .social-links {
@@ -51,11 +66,13 @@ p {
 .social-icon {
     width: 40px;
     height: 40px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .social-icon:hover {
     transform: scale(1.2);
+    background: linear-gradient(90deg, #ff00ff, #00ffff); /* Neon Pink to Cyan gradient on hover */
+    border-radius: 50%;
 }
 
 /* Responsive design */
